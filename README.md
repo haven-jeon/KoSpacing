@@ -22,7 +22,7 @@ Word spacing is one of the important parts of the preprocessing of Korean text a
 | OOOO(literary style)  Corpus(3M)   | 94.3% |
 
 - Accuracy = # correctly spaced characters/# characters in the test data.
-  - Does not normalize compound words. 
+  - Might be increased performance if normalize compound words. 
 
 
 #### Install
