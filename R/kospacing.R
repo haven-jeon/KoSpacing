@@ -73,7 +73,6 @@ make_pred_sent <- function(raw_sent, spacing_mat){
 
 
 
-#kospacing("가방에서무언가를꺼내는행동을하는순간,방아쇠가당겨졌다.")
 
 
 
