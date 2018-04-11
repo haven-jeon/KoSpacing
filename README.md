@@ -11,7 +11,7 @@ R package for automatic Korean word spacing.
 
 Word spacing is one of the important parts of the preprocessing of Korean text analysis. Accurate spacing greatly affects the accuracy of subsequent text analysis. `KoSpacing` can help fairly accurate automatic word spacing performance, especially good for online text originated from SNS.
 
-`KoSpacing` based on Deep Learning model trained from large corpus(more than 100 million NEWS articles from [Chan-Yub Park](https://github.com/mrchypark)). 
+`KoSpacing` is based on Deep Learning model trained from large corpus(more than 100 million NEWS articles from [Chan-Yub Park](https://github.com/mrchypark)). 
 
 
 #### Performance
