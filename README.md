@@ -27,6 +27,8 @@ Word spacing is one of the important parts of the preprocessing of Korean text a
 
 #### Install
 
+You need to install conda binary from https://www.anaconda.com/download/. Please install Python 3.6 version or later.
+
 To install from GitHub, use
 
     install.packages(c('Rcpp','tensorflow', 'keras', 'hashmap', 'reticulate'))

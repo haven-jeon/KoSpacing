@@ -9,25 +9,23 @@
 
 
 
-#' @importFrom reticulate import import_builtins py_module_available  virtualenv_install virtualenv_list use_virtualenv
+#' @importFrom reticulate import import_builtins py_module_available use_condaenv conda_create conda_install conda_list
 #' @importFrom keras load_model_hdf5 install_keras
 #' @import hashmap
 .onAttach <- function(libname, pkgname){
-  envnm <-'r-venv'
+  envnm <-'r-conda'
 
   tryCatch({
-    vlist <- virtualenv_list()
-    if(!(envnm %in% vlist)){
-      packageStartupMessage('installing python envirement!')
-      virtualenv_install(envnm, packages=c('tensorflow', 'keras', 'h5py'))
+    if(!(envnm %in% conda_list()$name)){
+      conda_create(envnm)
+      conda_install(envnm, packages=c('tensorflow', 'keras', 'h5py'))
     }
   },
   error = function(e){
-    packageStartupMessage('installing python envirement!')
-    virtualenv_install(envnm, packages=c('tensorflow', 'keras', 'h5py'))
+    stop("Need to install Anaconda3(>=3.6) from https://www.anaconda.com/download/.")
   },
   finally = {
-    use_virtualenv(envnm)
+    use_condaenv(envnm)
   })
 
   w2idx <- file.path(system.file(package="KoSpacing"),"model", 'w2idx_tbl.hm')
