@@ -11,7 +11,7 @@
 spacing <- function(ko_sents){
   model <- get("model",envir=.KoSpacingEnv)
   spacing_ <- function(ko_sent){
-    if(nchar(ko_sent) >= 198){
+    if(nchar(ko_sent) > 198){
       warning(sprintf("One sentence can not contain more than 198 characters. : %s", ko_sent))
     }
     ko_sent_ <- substr(ko_sent, 1, 198)
