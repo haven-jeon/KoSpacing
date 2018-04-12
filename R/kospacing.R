@@ -68,6 +68,7 @@ make_pred_sent <- function(raw_sent, spacing_mat){
   }
   ret <- paste0(ret_v, collapse = '')
   ret <- gsub('[«|»]', '', ret)
+  ret <- paste(strsplit(ret, split="[[:space:]]+")[[1]], collapse = ' ')
   return(ret)
 }
 
