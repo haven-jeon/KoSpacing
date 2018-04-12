@@ -2,7 +2,12 @@
 
 export(spacing)
 import(hashmap)
+importFrom(keras,install_keras)
 importFrom(keras,load_model_hdf5)
 importFrom(reticulate,import)
 importFrom(reticulate,import_builtins)
 importFrom(reticulate,py_module_available)
+importFrom(reticulate,use_virtualenv)
+importFrom(reticulate,virtualenv_install)
+importFrom(reticulate,virtualenv_list)
+importFrom(tensorflow,install_tensorflow)
