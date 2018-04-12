@@ -1,6 +1,6 @@
 #' do korean spacing
 #'
-#' @param ko_sents korean sentences
+#' @param ko_sents korean sentences (limit of sentence length  is 198, must be splitted.)
 #'
 #' @return spaced korean sentences
 #'
