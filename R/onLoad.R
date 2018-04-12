@@ -28,7 +28,7 @@
     use_condaenv(envnm)
   })
 
-  w2idx <- file.path(system.file(package="KoSpacing"),"model", 'w2idx_tbl.hm')
+  w2idx <- file.path(system.file(package="KoSpacing"),"model", 'w2idx')
 
   w2idx_tbl <- load_hashmap(w2idx)
 
