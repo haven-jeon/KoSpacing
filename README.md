@@ -53,7 +53,7 @@ To install from GitHub, use
 ```markdowns
 @misc{heewon2018,
 author = {Heewon Jeon},
-title = {Automatic Korean word spacing with R},
+title = {KoSpacing: Automatic Korean word spacing with R},
 publisher = {GitHub},
 journal = {GitHub repository},
 howpublished = {\url{https://github.com/haven-jeon/KoSpacing}}
