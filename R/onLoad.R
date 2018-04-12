@@ -10,7 +10,6 @@
 
 
 #' @importFrom reticulate import import_builtins py_module_available  virtualenv_install virtualenv_list use_virtualenv
-#' @importFrom tensorflow install_tensorflow
 #' @importFrom keras load_model_hdf5 install_keras
 #' @import hashmap
 .onAttach <- function(libname, pkgname){
@@ -22,14 +21,14 @@
       packageStartupMessage('installing python envirement!')
       virtualenv_install(envnm, packages=c('tensorflow', 'keras', 'h5py'))
     }
-    use_virtualenv(envnm)
   },
   error = function(e){
     packageStartupMessage('installing python envirement!')
     virtualenv_install(envnm, packages=c('tensorflow', 'keras', 'h5py'))
-    use_virtualenv(envnm)
   },
-  finally = NULL)
+  finally = {
+    use_virtualenv(envnm)
+  })
 
   w2idx <- file.path(system.file(package="KoSpacing"),"model", 'w2idx_tbl.hm')
 
@@ -40,7 +39,6 @@
   if(!py_module_available("tensorflow") || !py_module_available("keras")){
     packageStartupMessage("This R System may not contain `tensorflow` or `keras`.
       Starting to install tensorflow and keras with `keras`")
-    install_tensorflow()
     install_keras(extra_packages='h5py')
   }
   model_file <- file.path(system.file(package="KoSpacing"),"model", 'kospacing')
