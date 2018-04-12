@@ -2,11 +2,9 @@
 #'
 #' @param ko_sents korean sentences (limit of sentence length  is 198, must be splitted.)
 #'
-#' @return spaced korean sentences
+#' @return auto-spaced korean sentences
 #'
 #' @export
-#'
-#'
 #' @import hashmap
 spacing <- function(ko_sents){
   model <- get("model",envir=.KoSpacingEnv)
