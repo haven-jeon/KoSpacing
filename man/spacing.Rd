@@ -7,10 +7,10 @@
 spacing(ko_sents)
 }
 \arguments{
-\item{ko_sents}{korean sentences}
+\item{ko_sents}{korean sentences (limit of sentence length  is 198, must be splitted.)}
 }
 \value{
-spaced korean sentences
+auto-spaced korean sentences
 }
 \description{
 do korean spacing
