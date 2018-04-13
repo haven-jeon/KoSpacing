@@ -26,11 +26,11 @@
   finally = {
     use_condaenv(envnm)
     if(!py_module_available("tensorflow")){
-      conda_install(envnm, packages=c('tensorflow'))
+      conda_install(envnm, packages=c('tensorflow=1.4.0'))
     }
 
     if(!py_module_available("keras")){
-      conda_install(envnm, packages=c('keras'))
+      conda_install(envnm, packages=c('keras=2.1.5'))
     }
 
     if(!py_module_available("h5py")){
