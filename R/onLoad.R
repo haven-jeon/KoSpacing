@@ -18,7 +18,6 @@
   tryCatch({
     if(!(envnm %in% conda_list()$name)){
       conda_create(envnm)
-      conda_install(envnm, packages=c('tensorflow', 'keras', 'h5py'))
     }
   },
   error = function(e){
@@ -26,6 +25,15 @@
   },
   finally = {
     use_condaenv(envnm)
+    if(!py_module_available("tensorflow") || !py_module_available("keras")){
+      packageStartupMessage("This R System may not contain `tensorflow` or `keras`.
+                            Starting to install tensorflow and keras with `keras`")
+      conda_install(envnm, packages=c('tensorflow', 'keras'))
+    }
+
+    if(!py_module_available("h5py")){
+      conda_install(envnm, packages=c('h5py'))
+    }
   })
 
   w2idx <- file.path(system.file(package="KoSpacing"),"model", 'w2idx')
@@ -34,11 +42,6 @@
 
   assign("c2idx", w2idx_tbl, envir=.KoSpacingEnv)
 
-  #if(!py_module_available("tensorflow") || !py_module_available("keras")){
-  #  packageStartupMessage("This R System may not contain `tensorflow` or `keras`.
-  #    Starting to install tensorflow and keras with `keras`")
-  #  install_keras(extra_packages='h5py')
-  #}
   model_file <- file.path(system.file(package="KoSpacing"),"model", 'kospacing')
   model <- load_model_hdf5(model_file)
   packageStartupMessage("loaded KoSpacing model!")
