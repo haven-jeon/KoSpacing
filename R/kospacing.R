@@ -32,10 +32,9 @@ sent_to_matrix <- function(ko_sent){
   ko_sent_ <- gsub('\\s', '^', ko_sent_)
 
   #encoding and padding
-  encoded <- sapply(strsplit(ko_sent_, split='')[[1]], function(x){
-    x_ <- enc2utf8(x)
-    if(c2idx$has_key(x_)){
-      ret <- c2idx[[x_]]
+  encoded <- sapply(strsplit(enc2utf8(ko_sent_), split='')[[1]], function(x){
+    if(c2idx$has_key(x)){
+      ret <- c2idx[[x]]
     }else{
       ret <- c2idx[['__ETC__']]
     }
