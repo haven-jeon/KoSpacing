@@ -34,11 +34,11 @@
 
   assign("c2idx", w2idx_tbl, envir=.KoSpacingEnv)
 
-  if(!py_module_available("tensorflow") || !py_module_available("keras")){
-    packageStartupMessage("This R System may not contain `tensorflow` or `keras`.
-      Starting to install tensorflow and keras with `keras`")
-    install_keras(extra_packages='h5py')
-  }
+  #if(!py_module_available("tensorflow") || !py_module_available("keras")){
+  #  packageStartupMessage("This R System may not contain `tensorflow` or `keras`.
+  #    Starting to install tensorflow and keras with `keras`")
+  #  install_keras(extra_packages='h5py')
+  #}
   model_file <- file.path(system.file(package="KoSpacing"),"model", 'kospacing')
   model <- load_model_hdf5(model_file)
   packageStartupMessage("loaded KoSpacing model!")
