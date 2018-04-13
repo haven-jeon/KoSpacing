@@ -25,10 +25,12 @@
   },
   finally = {
     use_condaenv(envnm)
-    if(!py_module_available("tensorflow") || !py_module_available("keras")){
-      packageStartupMessage("This R System may not contain `tensorflow` or `keras`.
-                            Starting to install tensorflow and keras with `keras`")
-      conda_install(envnm, packages=c('tensorflow', 'keras'))
+    if(!py_module_available("tensorflow")){
+      conda_install(envnm, packages=c('tensorflow'))
+    }
+
+    if(!py_module_available("keras")){
+      conda_install(envnm, packages=c('keras'))
     }
 
     if(!py_module_available("h5py")){
