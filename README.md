@@ -1,7 +1,10 @@
 KoSpacing 
 ---------------
 
-R package for automatic Korean word spacing.
+R package for automatic Korean word spacing.  
+
+Python verson can be found [here](https://github.com/haven-jeon/PyKoSpacing).
+
 
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
@@ -51,10 +54,11 @@ To install from GitHub, use
 
 #### Citation
 
+
 ```markdowns
 @misc{heewon2018,
 author = {Heewon Jeon},
-title = {KoSpacing: Automatic Korean word spacing with R},
+title = {KoSpacing: Automatic Korean word spacing},
 publisher = {GitHub},
 journal = {GitHub repository},
 howpublished = {\url{https://github.com/haven-jeon/KoSpacing}}
