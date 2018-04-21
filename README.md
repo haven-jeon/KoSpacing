@@ -34,8 +34,6 @@ You need to install conda binary from https://www.anaconda.com/download/. Please
 
 To install from GitHub, use
 
-    install.packages('Rcpp')
-    install.packages(c('tensorflow', 'keras', 'hashmap', 'reticulate'))
     install.packages('devtools')
     devtools::install_github('haven-jeon/KoSpacing')
 
