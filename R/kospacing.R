@@ -47,7 +47,7 @@ spacing <- function(ko_sents) {
 
 sent_to_matrix <- function(ko_sent) {
   c2idx <- get("c2idx", envir = .KoSpacingEnv)
-  ko_sent_ <- paste0("«", ko_sent, "»")
+  ko_sent_ <- paste0('\u00ab', ko_sent, '\u00bb')
   ko_sent_ <- gsub('\\s', '^', ko_sent_)
 
   #encoding and padding
@@ -71,7 +71,7 @@ sent_to_matrix <- function(ko_sent) {
 
 
 make_pred_sent <- function(raw_sent, spacing_mat) {
-  raw_sent <- paste0('«', raw_sent, '»')
+  raw_sent <- paste0('\u00ab', raw_sent, '\u00bb')
   spacing_prob <- spacing_mat[1:nchar(raw_sent)]
   raw_chars <- strsplit(raw_sent, split = '')[[1]]
 
@@ -84,7 +84,7 @@ make_pred_sent <- function(raw_sent, spacing_mat) {
     }
   }
   ret <- paste0(ret_v, collapse = '')
-  ret <- gsub('[«|»]', '', ret)
+  ret <- gsub('[\u00ab|\u00bb]', '', ret)
   ret <-
     paste(strsplit(ret, split = "[[:space:]]+")[[1]], collapse = ' ')
   return(ret)

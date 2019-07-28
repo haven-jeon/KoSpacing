@@ -1,6 +1,5 @@
 #' @importFrom reticulate import import_builtins py_module_available use_condaenv conda_create conda_install conda_list
-#' @export
-set_env <- function() {
+install_conda_packages <- function() {
   envnm <- 'r-kospacing'
   reticulate::use_condaenv(envnm, required = TRUE)
   if (!reticulate::py_module_available("tensorflow")) {
@@ -18,7 +17,6 @@ set_env <- function() {
 
   if (rstudioapi::hasFun("restartSession"))
     rstudioapi::restartSession()
-
   invisible(NULL)
 }
 
@@ -40,7 +38,6 @@ check_model <- function() {
 
 #' @importFrom keras load_model_hdf5
 #' @importFrom hashmap load_hashmap
-#' @export
 set_model <- function(){
   w2idx <-
     file.path(system.file(package = "KoSpacing"), "model", 'w2idx')
@@ -73,7 +70,7 @@ check_conda_set <- function() {
 #'
 #' @importFrom reticulate conda_create
 #' @export
-create_conda_env <- function(){
+set_env <- function(){
   reticulate::conda_create("r-kospacing", packages = "python=3.6")
-  set_env()
+  install_conda_packages()
 }

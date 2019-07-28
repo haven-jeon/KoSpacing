@@ -7,5 +7,5 @@
 
 .onAttach <- function(libname, pkgname){
   packageStartupMessage("If you install package first fime, ")
-  packageStartupMessage("Please create_conda_env() run.")
+  packageStartupMessage("Please set_env() run before using spacing()")
 }
