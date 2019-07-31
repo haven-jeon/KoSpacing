@@ -2,10 +2,10 @@
 % Please edit documentation in R/set_env.R
 \name{set_env}
 \alias{set_env}
-\title{set conda env using kospacing function.}
+\title{Create Conda Env named r-kospacing}
 \usage{
 set_env()
 }
 \description{
-set conda env using kospacing function.
+Create Conda Env named r-kospacing
 }
