@@ -3,7 +3,12 @@ Type: Package
 Title: Automatic Korean word spacing with R
 Version: 0.1.1
 Authors@R: c(
-    person("Heewon", "Jeon", email = "madjakarta@gmail.com", role = c("aut", "cre"))
+    person("Heewon", "Jeon", email = "madjakarta@gmail.com", role = c("aut", "cre")),
+    person(given = "Chanyub",
+             family = "Park",
+             role = c("ctb"),
+             email = "mrchypark@gmail.com",
+             comment = c(ORCID = "0000-0001-6474-2570"))
     )
 Maintainer: Heewon Jeon <madjakarta@gmail.com>
 URL: https://github.com/haven-jeon/KoSpacing
